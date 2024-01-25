@@ -1,47 +1,47 @@
-# Face Detection and Information Entry
+Face Detection and Information Entry
 
 This repository contains a Python application for face detection and information entry. It includes two main components: a Tkinter-based desktop application for capturing faces and entering information, and a Flask-based web application for displaying captured faces and information in a web interface.
 
-## Features
+Features
 
-- **Face Capture Application (Tkinter):**
+Face Capture Application
   - Captures faces using a webcam.
   - Allows users to enter name, surname, and phone number for each captured face.
   - Saves captured faces and information in a SQLite database.
 
-- **Web Application (Flask):**
+Web Application (Flask)
   - Displays captured faces and information in a web interface.
   - Provides real-time updates using Flask-SocketIO.
   - Automatically refreshes the page every 2 seconds to check for new entries.
 
-## Setup and Installation
+Setup and Installation
 
 Clone the repository:
-
-   ```https://github.com/shaanbhuva/Face_capture.git
+https://github.com/shaanbhuva/Face_capture.git
 
 Install the required dependencies:
-   ```pip install -r requirements.txt
+pip install -r requirements.txt
 
 Run the applications:
 
   For the Face capture application:
-    ```python main.py
+  python main.py
 
   For the Flask application:
-    ```python app.py
+  python app.py
 
-To run both together:
-    ```python run.py
+  To run both together:
+  python run.py
 
-Open your web browser and visit http://127.0.0.1:5000/ to access the web interface.
+  Open your web browser and visit http://127.0.0.1:5000/ to access the web interface.
 
-# Folder Structure
 
+
+Folder Structure:
 captured_faces: Contains the captured face images.
 templates: Contains HTML templates for the web interface.
 
-# Technologies Used
+Technologies Used:
 OpenCV for face detection.
 Tkinter for the desktop application.
 Flask and Flask-SocketIO for the web application.
