@@ -1,0 +1,10 @@
+# For Flask and Flask-SocketIO in app.py
+Flask==2.0.1
+Flask-SocketIO==5.1.1
+
+# For video capture in FaceCaptureApp in app.py
+opencv-python==4.5.3
+Pillow==8.2.0
+
+# Additional dependencies for Tkinter in main.py and run.py
+# (Note: Tkinter is typically included with Python, so it may not need to be explicitly installed)
