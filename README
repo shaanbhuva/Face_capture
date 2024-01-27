@@ -4,11 +4,11 @@ This Python application utilizes OpenCV for face detection, Tkinter for the GUI,
 
 ## Features
 
-- **Face Detection and Capture:** Utilizes OpenCV to detect faces in real-time using a webcam and capture them.
-- **Information Entry:** Users can enter additional information such as name, surname, and phone number for the captured face.
-- **Data Storage:** Stores captured faces and associated information in an SQLite database for easy retrieval and management.
-- **WhatsApp Notification:** Sends a WhatsApp message to the provided phone number with the captured photo, notifying the user about the newly captured face.
-- **User-Friendly GUI:** The application features a simple and intuitive graphical user interface built using Tkinter.
+- Face Detection and Capture: Utilizes OpenCV to detect faces in real-time using a webcam and capture them.
+- Information Entry: Users can enter additional information such as name, surname, and phone number for the captured face.
+- Data Storage: Stores captured faces and associated information in an SQLite database for easy retrieval and management.
+- WhatsApp Notification: Sends a WhatsApp message to the provided phone number with the captured photo, notifying the user about the newly captured face.
+- User-Friendly GUI: The application features a simple and intuitive graphical user interface built using Tkinter.
 
 ## Requirements
 
@@ -22,31 +22,27 @@ This Python application utilizes OpenCV for face detection, Tkinter for the GUI,
 
 ## Setup
 
-1. **Install Dependencies:** Install the required dependencies using pip:
-```bash
+1. Install Dependencies: Install the required dependencies using pip:
 pip install opencv-python tkinter pillow twilio
 
+2. Twilio Account Setup: Create a Twilio account if you don't have one already: [Twilio](https://www.twilio.com/). Obtain your Twilio Account SID, Authentication Token, and a Twilio phone number.
 
-2. **Twilio Account Setup:** Create a Twilio account if you don't have one already: [Twilio](https://www.twilio.com/). Obtain your Twilio Account SID, Authentication Token, and a Twilio phone number.
+3. Clone Repository: Clone or download the repository to your local machine.
 
-3. **Clone Repository:** Clone or download the repository to your local machine.
-
-4. **Update Twilio Credentials:** Update the `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, and `TWILIO_PHONE_NUMBER` constants in the script with your Twilio credentials.
+4. Update Twilio Credentials: Update the `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, and `TWILIO_PHONE_NUMBER` constants in the script with your Twilio credentials.
 
 ## Usage
 
-1. **Run Script:** Execute the script:
-```bash
+1. Run Script: Execute the script:
 python face_capture.py
 
+2. Capture Face: Click on the "Capture New Face" button in the application window to capture a face using the webcam.
 
-2. **Capture Face:** Click on the "Capture New Face" button in the application window to capture a face using the webcam.
+3. Enter Information: Enter the required information (name, surname, and phone number) in the dialog box that appears.
 
-3. **Enter Information:** Enter the required information (name, surname, and phone number) in the dialog box that appears.
+4. Save Data: The captured face, along with the entered information, will be saved in the `captured_faces` folder, and a WhatsApp message will be sent to the provided phone number with the captured photo.
 
-4. **Save Data:** The captured face, along with the entered information, will be saved in the `captured_faces` folder, and a WhatsApp message will be sent to the provided phone number with the captured photo.
-
-5. **Repeat Process:** Repeat the process to capture additional faces if needed.
+5. Repeat Process: Repeat the process to capture additional faces if needed.
 
 ## Notes
 
