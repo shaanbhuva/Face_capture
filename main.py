@@ -5,6 +5,11 @@ from PIL import Image, ImageTk
 import os
 import sqlite3
 from datetime import datetime
+from twilio.rest import Client
+
+TWILIO_ACCOUNT_SID = 'ACe55657bc396c126cfff6bfeaab32ed1a'
+TWILIO_AUTH_TOKEN = '8e53db3a0e541936f0c11cb07a623d2e'
+TWILIO_PHONE_NUMBER = '+14155238886'
 
 class MultiEntryDialog(Dialog):
     def __init__(self, parent, title, prompts):
@@ -105,6 +110,23 @@ class FaceCaptureApp:
 
         print(f"Face captured for {user_name} {user_surname}. Image saved at: {face_filepath}")
 
+        # Send WhatsApp message
+        self.send_whatsapp_message(user_name, user_surname, user_phone, face_filepath)
+
+    def send_whatsapp_message(self, user_name, user_surname, user_phone, face_filepath):
+        account_sid = 'ACe55657bc396c126cfff6bfeaab32ed1a'
+        auth_token = TWILIO_AUTH_TOKEN
+        client = Client(account_sid, auth_token)
+
+        message_body = f"Hello {user_name} {user_surname}!\nYour face has been captured"
+        
+        message = client.messages.create(
+            body=message_body,
+            from_= 'whatsapp:+14155238886',
+            to='whatsapp:' +user_phone
+        )
+
+        print(f"WhatsApp message sent to {user_name} {user_surname}. Message SID: {message.sid}")
 
     def update(self):
         ret, frame = self.cap.read()

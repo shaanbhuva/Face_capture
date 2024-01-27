@@ -1,50 +1,55 @@
-Face Detection and Information Entry
+# Face Detection and Information Entry
 
-This repository contains a Python application for face detection and information entry. It includes two main components: a Tkinter-based desktop application for capturing faces and entering information, and a Flask-based web application for displaying captured faces and information in a web interface.
+This Python application utilizes OpenCV for face detection, Tkinter for the GUI, and SQLite for data storage. It allows users to capture faces using a webcam, enter information such as name, surname, and phone number associated with the captured face, and save this information along with the image of the captured face. Additionally, it sends a WhatsApp message to the provided phone number notifying the user about the captured face.
 
-Features
+## Features
 
-Face Capture Application
-  - Captures faces using a webcam.
-  - Allows users to enter name, surname, and phone number for each captured face.
-  - Saves captured faces and information in a SQLite database.
+- **Face Detection and Capture:** Utilizes OpenCV to detect faces in real-time using a webcam and capture them.
+- **Information Entry:** Users can enter additional information such as name, surname, and phone number for the captured face.
+- **Data Storage:** Stores captured faces and associated information in an SQLite database for easy retrieval and management.
+- **WhatsApp Notification:** Sends a WhatsApp message to the provided phone number with the captured photo, notifying the user about the newly captured face.
+- **User-Friendly GUI:** The application features a simple and intuitive graphical user interface built using Tkinter.
 
-Web Application (Flask)
-  - Displays captured faces and information in a web interface.
-  - Provides real-time updates using Flask-SocketIO.
-  - Automatically refreshes the page every 2 seconds to check for new entries.
+## Requirements
 
-Setup and Installation
+- Python 3.x
+- OpenCV (`cv2`)
+- Tkinter
+- Pillow (`PIL`)
+- SQLite3
+- Twilio Python library (`twilio`)
+- Twilio Account SID, Authentication Token, and a Twilio phone number (for sending WhatsApp messages)
 
-Clone the repository:
-https://github.com/shaanbhuva/Face_capture.git
+## Setup
 
-Install the required dependencies:
-pip install -r requirements.txt
-
-Run the applications:
-
-  For the Face capture application:
-  python main.py
-
-  For the Flask application:
-  python app.py
-
-  To run both together:
-  python run.py
-
-  Open your web browser and visit http://127.0.0.1:5000/ to access the web interface.
+1. **Install Dependencies:** Install the required dependencies using pip:
+```bash
+pip install opencv-python tkinter pillow twilio
 
 
+2. **Twilio Account Setup:** Create a Twilio account if you don't have one already: [Twilio](https://www.twilio.com/). Obtain your Twilio Account SID, Authentication Token, and a Twilio phone number.
 
-Folder Structure:
-captured_faces: Contains the captured face images.
-templates: Contains HTML templates for the web interface.
+3. **Clone Repository:** Clone or download the repository to your local machine.
 
-Technologies Used:
-OpenCV for face detection.
-Tkinter for the desktop application.
-Flask and Flask-SocketIO for the web application.
-SQLite for database storage.
-PIL (Pillow) for image processing.
+4. **Update Twilio Credentials:** Update the `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, and `TWILIO_PHONE_NUMBER` constants in the script with your Twilio credentials.
+
+## Usage
+
+1. **Run Script:** Execute the script:
+```bash
+python face_capture.py
+
+
+2. **Capture Face:** Click on the "Capture New Face" button in the application window to capture a face using the webcam.
+
+3. **Enter Information:** Enter the required information (name, surname, and phone number) in the dialog box that appears.
+
+4. **Save Data:** The captured face, along with the entered information, will be saved in the `captured_faces` folder, and a WhatsApp message will be sent to the provided phone number with the captured photo.
+
+5. **Repeat Process:** Repeat the process to capture additional faces if needed.
+
+## Notes
+
+- Ensure that your webcam is connected and functioning properly.
+- Provide a valid phone number in the international format (e.g., +91XXXXXXXXXX) for receiving WhatsApp notifications.
 
