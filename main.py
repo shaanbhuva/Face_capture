@@ -6,10 +6,8 @@ import os
 import sqlite3
 from datetime import datetime
 from twilio.rest import Client
+from config import TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER
 
-TWILIO_ACCOUNT_SID = 'ACe55657bc396c126cfff6bfeaab32ed1a'
-TWILIO_AUTH_TOKEN = '8e53db3a0e541936f0c11cb07a623d2e'
-TWILIO_PHONE_NUMBER = '+14155238886'
 
 class MultiEntryDialog(Dialog):
     def __init__(self, parent, title, prompts):
